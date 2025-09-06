@@ -1,17 +1,13 @@
 # Tarea 1 - Sistemas Operativos 1
 
 ## Integrante
-- Nombre: [Tu Nombre]
-- Carné: [Tu Carné]
+- Nombre: Wilmer Estuardo Vasquez Raxon 
+- Carné: 201800678
+
 
 ---
 
-## 1. Instalación de entorno Linux
-Incluye aquí una breve explicación de cómo instalaste o accediste a tu entorno Linux (WSL, VM, GCP, etc.) y una captura de pantalla.
-
----
-
-## 2. Comandos básicos
+## Comandos básicos
 
 ### Navegación de directorios
 - `cd`, `ls`, `pwd`
@@ -22,30 +18,38 @@ Incluye aquí una breve explicación de cómo instalaste o accediste a tu entorn
 
 ### Manipulación de archivos
 - `touch`, `cp`, `mv`, `rm`
+![Captura de comandos de manipulación de archivos](../comandosManipulacion.png)
 
 ### Visualización de contenido
 - `cat`, `more`, `less`
+![Captura de comandos de visualización de contenido](../comandosVisualizacion.png)
 
 ### Gestión de permisos
 - `chmod`, `chown`
+![Captura de comandos de gestión de permisos](../comandosPermisos.png)
 
 ---
 
-## 3. Script Bash: simulacion_crear_contenedores.sh
+## Script Bash: simulacion_crear_contenedores.sh
 
-Incluye el código del script y explica su funcionamiento.
+```bash
+    #!/bin/bash
 
+    # Generar un número aleatorio entre 1 y 4
+    cantidad=$((RANDOM % 4 + 1))
+
+    for ((i=1; i<=cantidad; i++)); do
+    nombre_aleatorio=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 8)
+    nombre_archivo="contenedor_#201800678_${nombre_aleatorio}.txt"
+    echo "$nombre_archivo" > "$nombre_archivo"
+    done
+
+    echo "$cantidad archivos creados."
+```
 ---
 
-## 4. Ejecución del script
+## Ejecución del script
 Incluye capturas de pantalla mostrando la ejecución del script y los archivos generados.
+![Captura de ejecución del script](../bashScript.png)
 
 ---
-
-## 5. Evidencias
-Agrega aquí todas las capturas de pantalla solicitadas.
-
----
-
-## 6. Enlace al repositorio
-[Coloca aquí el link de tu repositorio en GitHub]
